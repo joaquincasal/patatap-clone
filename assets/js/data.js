@@ -1,4 +1,4 @@
-var soundsDirectory = "sounds/";
+var soundsDirectory = "assets/sounds/";
 var soundsFolders = ["A", "B", "C", "D", "E", "F", "G"];
 var currentFolder = "A";
 var keyData = loadKeyData(currentFolder);
