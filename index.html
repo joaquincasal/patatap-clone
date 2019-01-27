@@ -7,20 +7,20 @@
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.11.8/paper-full.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.15/howler.core.min.js"></script>
 	<script type="text/javascript" src="data.js"></script>
+	<script type="text/javascript" src="sounds.js"></script>
 	<script type="text/paperscript" canvas="myCanvas">
 		var circles = [];
 
-		function onKeyDown(event){
+		document.addEventListener('keypress', function(event){
 			if (keyData[event.key]){
 				var maxPoint = new Point(view.size.width, view.size.height);
 				var randomPoint = Point.random();
 				var point = maxPoint * randomPoint;
 				var circle = new Path.Circle(point, 400);
 				circle.fillColor = keyData[event.key].color;
-				keyData[event.key].sound.play();
 				circles.push(circle);
 			}
-		}
+		  });
 
 		function onFrame(event) {
 			for (var i = 0; i < circles.length; i++){
